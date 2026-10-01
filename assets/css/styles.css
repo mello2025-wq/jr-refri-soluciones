@@ -1,0 +1,1244 @@
+/* ==========================================================================
+   JR REFRI SOLUCIONES - Main Stylesheet
+   Design based on Landing 1 & 8 with custom branding (Blue, Red, Dark Navy)
+   ========================================================================== */
+
+:root {
+  /* Brand Colors */
+  --primary-blue: #0066FF;
+  --primary-blue-dark: #0044CC;
+  --primary-blue-light: #EBF3FF;
+  --cyan-accent: #00D2FF;
+  --brand-red: #E62129;
+  --brand-red-hover: #C5131A;
+  --brand-red-light: #FFEBEB;
+  
+  /* Neutral & Dark Palette */
+  --navy-dark: #0A192F;
+  --navy-darker: #060E1A;
+  --navy-card: #0F223D;
+  --text-dark: #1E293B;
+  --text-muted: #64748B;
+  --text-light: #94A3B8;
+  --bg-light: #F8FAFC;
+  --bg-white: #FFFFFF;
+  --border-light: #E2E8F0;
+  --border-card: #CBD5E1;
+
+  /* Typography */
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  
+  /* Transitions & Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 30px -10px rgba(0, 102, 255, 0.15);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ==========================================================================
+   TOP BAR (Ticker & Contact)
+   ========================================================================== */
+.top-bar {
+  background-color: var(--navy-darker);
+  color: #E2E8F0;
+  font-size: 0.85rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.top-bar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.top-bar-info {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.top-bar-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.top-bar-item i {
+  color: var(--cyan-accent);
+}
+
+.top-bar-social {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.top-bar-social a {
+  color: #CBD5E1;
+  font-size: 0.95rem;
+}
+
+.top-bar-social a:hover {
+  color: var(--cyan-accent);
+}
+
+/* ==========================================================================
+   HEADER & NAVIGATION
+   ========================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand-logo img {
+  height: 52px;
+  width: auto;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.brand-text h1 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--navy-dark);
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+.brand-text h1 span {
+  color: var(--brand-red);
+}
+
+.brand-text p {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--primary-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+
+.nav-links a:hover {
+  color: var(--primary-blue);
+}
+
+.header-cta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn-header-call {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--navy-dark);
+  color: white;
+  padding: 0.65rem 1.25rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-header-call:hover {
+  background-color: var(--primary-blue);
+  color: white;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  color: var(--navy-dark);
+}
+
+/* ==========================================================================
+   BUTTONS & BADGES
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--brand-red) 0%, #d8141c 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(230, 33, 41, 0.35);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #c5131a 0%, #aa0d14 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(230, 33, 41, 0.45);
+}
+
+.btn-whatsapp {
+  background-color: #25D366;
+  color: white;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);
+}
+
+.btn-whatsapp:hover {
+  background-color: #1EBE5D;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border: 2px solid white;
+  color: white;
+}
+
+.btn-outline:hover {
+  background-color: white;
+  color: var(--navy-dark);
+}
+
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-red {
+  background-color: var(--brand-red-light);
+  color: var(--brand-red);
+}
+
+.badge-blue {
+  background-color: var(--primary-blue-light);
+  color: var(--primary-blue);
+}
+
+.badge-dark {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* ==========================================================================
+   HERO SECTION (Inspirada en Landing 1)
+   ========================================================================== */
+.hero-section {
+  position: relative;
+  background: linear-gradient(135deg, var(--navy-darker) 0%, var(--navy-dark) 50%, #0D284E 100%);
+  color: white;
+  padding: 4.5rem 0 5rem;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 100%;
+  background: radial-gradient(circle at 70% 30%, rgba(0, 102, 255, 0.2) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content .hero-eyebrow {
+  margin-bottom: 1rem;
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: 2.85rem;
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  margin-bottom: 1.25rem;
+}
+
+.hero-title .highlight {
+  color: var(--cyan-accent);
+}
+
+.hero-description {
+  font-size: 1.15rem;
+  color: #CBD5E1;
+  margin-bottom: 1.8rem;
+  max-width: 580px;
+}
+
+.hero-bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-bottom: 2rem;
+}
+
+.hero-bullet-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+  color: #F1F5F9;
+}
+
+.hero-bullet-item i {
+  color: var(--cyan-accent);
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Quick Contact Form inside Hero (Landing 1 pattern) */
+.hero-card {
+  background: rgba(15, 34, 61, 0.85);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.hero-card-header {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.hero-card-header h3 {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 0.35rem;
+}
+
+.hero-card-header p {
+  font-size: 0.85rem;
+  color: #94A3B8;
+}
+
+.quick-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form-group label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #CBD5E1;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: white;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.25);
+}
+
+.form-control::placeholder {
+  color: #64748B;
+}
+
+.form-footer-note {
+  font-size: 0.75rem;
+  color: #94A3B8;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* ==========================================================================
+   TRUST BAR (Valores y Garantías - Landing 1)
+   ========================================================================== */
+.trust-bar {
+  background-color: white;
+  border-bottom: 1px solid var(--border-light);
+  padding: 1.5rem 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.trust-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background-color: var(--primary-blue-light);
+  color: var(--primary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+
+.trust-info h4 {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--navy-dark);
+}
+
+.trust-info p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   SECTION COMMON STYLES
+   ========================================================================== */
+section {
+  padding: 5rem 0;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 3.5rem;
+}
+
+.section-header .badge-pill {
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--navy-dark);
+  line-height: 1.2;
+  margin-bottom: 0.85rem;
+  letter-spacing: -0.5px;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   PREVENTIVE DIAGNOSIS (Landing 1 - Detecta detalles pequeños)
+   ========================================================================== */
+.diagnosis-section {
+  background-color: white;
+}
+
+.diagnosis-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.diagnosis-card {
+  background: var(--bg-light);
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.diagnosis-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-blue);
+}
+
+.diagnosis-card-img {
+  height: 180px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.diagnosis-card-body {
+  padding: 1.25rem;
+}
+
+.diagnosis-card-body h4 {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy-dark);
+  margin-bottom: 0.4rem;
+}
+
+.diagnosis-card-body p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+/* ==========================================================================
+   SERVICES SECTION (Piso Techo, Cassette, Mini Split, Recarga Gas)
+   ========================================================================== */
+.services-section {
+  background: var(--bg-light);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.service-card {
+  background: white;
+  border-radius: 16px;
+  border: 1px solid var(--border-light);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  position: relative;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--primary-blue);
+}
+
+.service-card.featured {
+  border: 2px solid var(--primary-blue);
+}
+
+.service-badge {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+}
+
+.service-icon-box {
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  background: var(--primary-blue-light);
+  color: var(--primary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.service-card.featured .service-icon-box {
+  background: var(--brand-red-light);
+  color: var(--brand-red);
+}
+
+.service-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--navy-dark);
+  margin-bottom: 0.5rem;
+}
+
+.service-card p.service-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.service-features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-bottom: 1.75rem;
+  flex-grow: 1;
+}
+
+.service-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-dark);
+}
+
+.service-features li i {
+  color: #10B981;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   WHAT'S INCLUDED (Inspirado en Landing 8 - Checklist Técnico)
+   ========================================================================== */
+.checklist-section {
+  background-color: white;
+}
+
+.checklist-wrapper {
+  background: linear-gradient(135deg, var(--navy-dark) 0%, #102A4C 100%);
+  color: white;
+  border-radius: 20px;
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  box-shadow: var(--shadow-xl);
+}
+
+.checklist-content h3 {
+  font-family: var(--font-heading);
+  font-size: 1.85rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.checklist-content p {
+  color: #CBD5E1;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.checklist-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.88rem;
+  color: #E2E8F0;
+}
+
+.checklist-item i {
+  color: var(--cyan-accent);
+  margin-top: 2px;
+}
+
+.checklist-video-box {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+.checklist-video-box video {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   3 SIMPLE STEPS (Landing 1 Process)
+   ========================================================================== */
+.process-section {
+  background-color: var(--bg-light);
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  position: relative;
+}
+
+.step-card {
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  padding: 2.25rem 1.75rem;
+  position: relative;
+  text-align: left;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.step-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-blue);
+  box-shadow: var(--shadow-md);
+}
+
+.step-number {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background-color: var(--navy-dark);
+  color: white;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.step-card:nth-child(2) .step-number {
+  background-color: var(--primary-blue);
+}
+
+.step-card:nth-child(3) .step-number {
+  background-color: var(--brand-red);
+}
+
+.step-card h4 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--navy-dark);
+  margin-bottom: 0.5rem;
+}
+
+.step-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   REAL WORK GALLERY & PROOF (Landing 1 - Trabajos Recientes)
+   ========================================================================== */
+.gallery-section {
+  background-color: white;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.gallery-card {
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.gallery-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.gallery-media {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+}
+
+.gallery-media img, .gallery-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-card:hover .gallery-media img {
+  transform: scale(1.05);
+}
+
+.gallery-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(10, 25, 47, 0.85);
+  color: white;
+  padding: 0.3rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  backdrop-filter: blur(4px);
+}
+
+.gallery-body {
+  padding: 1.25rem;
+}
+
+.gallery-body h4 {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy-dark);
+  margin-bottom: 0.35rem;
+}
+
+.gallery-body p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   COVERAGE AREA SECTION (Panamá Oeste & Ciudad Capital)
+   ========================================================================== */
+.coverage-section {
+  background: linear-gradient(180deg, var(--bg-light) 0%, #EDF2F7 100%);
+  text-align: center;
+}
+
+.areas-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  max-width: 900px;
+  margin: 0 auto 2.5rem;
+}
+
+.area-pill {
+  background: white;
+  border: 1px solid var(--border-light);
+  padding: 0.65rem 1.25rem;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--navy-dark);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.area-pill:hover {
+  border-color: var(--primary-blue);
+  color: var(--primary-blue);
+  transform: translateY(-2px);
+}
+
+.area-pill i {
+  color: var(--brand-red);
+}
+
+/* ==========================================================================
+   FAQ ACCORDION (Landing 1 & 8)
+   ========================================================================== */
+.faq-section {
+  background-color: white;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.faq-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy-dark);
+  text-align: left;
+  background: white;
+  transition: var(--transition);
+}
+
+.faq-header:hover {
+  background: var(--bg-light);
+  color: var(--primary-blue);
+}
+
+.faq-header i {
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+  color: var(--primary-blue);
+}
+
+.faq-item.active .faq-header i {
+  transform: rotate(180deg);
+}
+
+.faq-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease-out;
+  background: white;
+}
+
+.faq-content {
+  padding: 0 1.5rem 1.25rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   FINAL CALL TO ACTION BANNER (Landing 1 Bottom Banner)
+   ========================================================================== */
+.final-cta {
+  background: linear-gradient(135deg, var(--navy-darker) 0%, var(--navy-dark) 100%);
+  color: white;
+  padding: 4.5rem 0;
+  position: relative;
+  text-align: center;
+}
+
+.final-cta-content {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.final-cta h2 {
+  font-family: var(--font-heading);
+  font-size: 2.35rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.final-cta p {
+  font-size: 1.15rem;
+  color: #CBD5E1;
+  margin-bottom: 2rem;
+}
+
+.final-cta-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.site-footer {
+  background-color: #050B14;
+  color: #94A3B8;
+  padding: 4rem 0 2rem;
+  font-size: 0.9rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.footer-brand img {
+  height: 55px;
+  width: auto;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.footer-brand p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.footer-column h4 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1.2rem;
+  position: relative;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.footer-links a:hover {
+  color: var(--cyan-accent);
+  padding-left: 4px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.8rem;
+}
+
+/* ==========================================================================
+   FLOATING WHATSAPP BUTTON (High conversion)
+   ========================================================================== */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: #25D366;
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: var(--transition);
+  animation: pulse-green 2.5s infinite;
+}
+
+.floating-whatsapp:hover {
+  background-color: #1EBE5D;
+  transform: scale(1.06);
+  color: white;
+}
+
+.floating-whatsapp i {
+  font-size: 1.4rem;
+}
+
+@keyframes pulse-green {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (Mobile First Mindset)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .diagnosis-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .checklist-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .top-bar-info {
+    font-size: 0.78rem;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-lg);
+    border-top: 1px solid var(--border-light);
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .header-cta .btn-header-call span {
+    display: none;
+  }
+  .hero-title {
+    font-size: 2.15rem;
+  }
+  .trust-grid {
+    grid-template-columns: 1fr;
+  }
+  .diagnosis-grid {
+    grid-template-columns: 1fr;
+  }
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+  .checklist-grid {
+    grid-template-columns: 1fr;
+  }
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .floating-whatsapp span {
+    display: none;
+  }
+  .floating-whatsapp {
+    padding: 0.85rem;
+    border-radius: 50%;
+  }
+}
